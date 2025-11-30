@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8dh31oqll5jr"]
+
+[ext_resource type="Script" uid="uid://bot3s5b8stnhw" path="res://Settings.gd" id="1_bvb5x"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_bvb5x")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.133333, 0.164706, 0.211765, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MasterVolume" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MasterVolumeLabel" type="Label" parent="Center/VBox/MasterVolume"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Center/VBox/MasterVolume"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -80.0
+max_value = 0.0
+
+[node name="Fullscreen" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="Center/VBox/Fullscreen"]
+layout_mode = 2
+text = "Fullscreen"
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back
+"
+
+[connection signal="changed" from="Center/VBox/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_changed"]
+[connection signal="value_changed" from="Center/VBox/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="toggled" from="Center/VBox/Fullscreen/FullscreenCheckButton" to="." method="_on_fullscreen_check_button_toggled"]
+[connection signal="pressed" from="Center/VBox/BackButton" to="." method="_on_back_button_pressed"]
