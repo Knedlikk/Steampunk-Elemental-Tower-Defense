@@ -36,4 +36,4 @@ func _on_checkbox_toggled(toggled_on: bool) -> void:
 
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Menu.tscn")
+	get_tree().change_scene_to_file("res://ui/Menu.tscn")

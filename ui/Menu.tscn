@@ -1,21 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://dia1tonuadu6p"]
 
-[ext_resource type="Script" uid="uid://bsjae85rebrib" path="res://Menu.gd" id="1_uubjt"]
+[ext_resource type="Script" uid="uid://bsjae85rebrib" path="res://ui/Menu.gd" id="1_eya86"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uubjt")
+script = ExtResource("1_eya86")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.133333, 0.164706, 0.211765, 1)
+color = Color(0.133, 0.165, 0.212, 1)
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
