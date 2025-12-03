@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc3m8krgv3ch8"]
+
+[ext_resource type="Script" uid="uid://bf6bgo6ml1j3j" path="res://SettingsWindow.gd" id="1_mb6dx"]
+
+[node name="Window" type="Window"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 400)
+script = ExtResource("1_mb6dx")
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MasterVolume" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MasterVolumeLabel" type="Label" parent="Center/VBox/MasterVolume"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Center/VBox/MasterVolume"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -80.0
+max_value = 0.0
+
+[node name="Fullscreen" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="Center/VBox/Fullscreen"]
+layout_mode = 2
+text = "Fullscreen"
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back
+"
+
+[node name="MainMenuButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Center/VBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Center/VBox/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

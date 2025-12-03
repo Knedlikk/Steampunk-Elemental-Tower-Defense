@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://dia1tonuadu6p"]
+
+[ext_resource type="Script" uid="uid://bsjae85rebrib" path="res://ui/Menu.gd" id="1_eya86"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eya86")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.133, 0.165, 0.212, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Tower Defense"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="Center/VBox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Center/VBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Center/VBox/QuitButton" to="." method="_on_quit_button_pressed"]
