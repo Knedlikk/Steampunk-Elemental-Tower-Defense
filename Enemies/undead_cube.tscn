@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dma1lh8j84i6s"]
+
+[ext_resource type="Texture2D" uid="uid://dv0q11nv26yue" path="res://Assets/undead_cube.png" id="1_ui0y8"]
+[ext_resource type="Script" uid="uid://cipgynojlk082" path="res://Enemies/undead_cube.gd" id="2_mv0tn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ui0y8"]
+
+[node name="UndeadCube" type="CharacterBody2D"]
+script = ExtResource("2_mv0tn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ui0y8")
+
+[node name="UndeadCube" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 1)
+texture = ExtResource("1_ui0y8")
