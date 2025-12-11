@@ -17,7 +17,7 @@ mouse_filter = 2
 layout_mode = 0
 offset_top = 1.0
 offset_right = 321.0
-offset_bottom = 63.0
+offset_bottom = 65.0
 mouse_filter = 2
 
 [node name="BasicTurretPanel" parent="Panel/FlowContainer" instance=ExtResource("1_80ouf")]

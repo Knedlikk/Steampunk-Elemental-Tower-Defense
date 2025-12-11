@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://b5b0abiu3plf1"]
-
-[node name="Level2" type="Control"]
-layout_mode = 3
-anchors_preset = 0
