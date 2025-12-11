@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://g5w8sihor4eb"]
+[gd_scene load_steps=6 format=3 uid="uid://g5w8sihor4eb"]
 
 [ext_resource type="Texture2D" uid="uid://bybwosayio62p" path="res://Assets/basic_turret_lvl0.png" id="1_bnde7"]
 [ext_resource type="Script" uid="uid://dpcxlw2sxqfea" path="res://Towers/basic_turret.gd" id="1_g3ufw"]
@@ -8,6 +8,13 @@ size = Vector2(47, 47)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glq7l"]
 radius = 193.04144
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3ufw"]
+bg_color = Color(0.6230706, 0.8482412, 0.98297423, 0.41568628)
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
 
 [node name="BasicTurret" type="StaticBody2D"]
 script = ExtResource("1_g3ufw")
@@ -30,6 +37,13 @@ texture = ExtResource("1_bnde7")
 shape = SubResource("CircleShape2D_glq7l")
 
 [node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3ufw")
 
 [connection signal="body_entered" from="TowerRange" to="." method="_on_tower_range_body_entered"]
 [connection signal="body_exited" from="TowerRange" to="." method="_on_tower_range_body_exited"]

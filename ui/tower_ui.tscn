@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8s5gdj3d8hlm"]
+
+[ext_resource type="PackedScene" uid="uid://cmjd7g048cubc" path="res://ui/tower_panels/BasicTurretPanel.tscn" id="1_80ouf"]
+[ext_resource type="PackedScene" uid="uid://bsw1ytrh1i4fh" path="res://ui/tower_panels/ObeliskPanel.tscn" id="2_snuy6"]
+[ext_resource type="PackedScene" uid="uid://bu03wv2rwm5qr" path="res://ui/tower_panels/ToxicWasteTurretPanel.tscn" id="3_dhcvj"]
+
+[node name="TowerUI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 225.0
+offset_top = 448.0
+offset_right = 547.0
+offset_bottom = 512.0
+mouse_filter = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 321.0
+offset_bottom = 63.0
+mouse_filter = 2
+
+[node name="BasicTurretPanel" parent="Panel/FlowContainer" instance=ExtResource("1_80ouf")]
+layout_mode = 2
+
+[node name="ObeliskPanel" parent="Panel/FlowContainer" instance=ExtResource("2_snuy6")]
+layout_mode = 2
+
+[node name="ToxicWasteTurretPanel" parent="Panel/FlowContainer" instance=ExtResource("3_dhcvj")]
+layout_mode = 2

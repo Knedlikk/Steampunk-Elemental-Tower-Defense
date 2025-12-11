@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu03wv2rwm5qr"]
+
+[ext_resource type="Texture2D" uid="uid://bqd66vueftx6" path="res://Assets/toxic_waste_turret_0.png" id="1_ns4cs"]
+[ext_resource type="Script" uid="uid://ixtdhuo51ite" path="res://ui/tower_panels/ToxicWasteTurretPanel.gd" id="1_rn78q"]
+
+[node name="ToxicWasteTurretPanel" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rn78q")
+
+[node name="ToxicWasteTurret0" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 40)
+texture = ExtResource("1_ns4cs")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

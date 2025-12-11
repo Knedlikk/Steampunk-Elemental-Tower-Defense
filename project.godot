@@ -15,6 +15,15 @@ run/main_scene="res://Urovne/level_1.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=768
+window/size/viewport_height=512
+
 [dotnet]
 
 project/assembly_name="Steampunk Elemental Tower Defense"
+
+[global_group]
+
+Enemies=""

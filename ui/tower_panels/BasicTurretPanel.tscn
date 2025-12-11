@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmjd7g048cubc"]
+
+[ext_resource type="Script" uid="uid://b4pnjgsmwfke0" path="res://ui/tower_panels/BasicTurretPanel.gd" id="1_8ty1j"]
+[ext_resource type="Texture2D" uid="uid://bybwosayio62p" path="res://Assets/basic_turret_lvl0.png" id="2_l8yt8"]
+
+[node name="BasicTurretPanel" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8ty1j")
+
+[node name="BasicTurretLvl0" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_l8yt8")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

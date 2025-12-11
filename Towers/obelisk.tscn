@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dobnqm1qg125u"]
+
+[ext_resource type="Script" uid="uid://dlbgl52kcnvd0" path="res://Towers/obelisk.gd" id="1_doacj"]
+[ext_resource type="Texture2D" uid="uid://dcnhwt8is3mus" path="res://Assets/obelisk_0.png" id="1_nxbmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_doacj"]
+size = Vector2(47, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rhmm"]
+radius = 193.04144
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v68eo"]
+bg_color = Color(0.6230706, 0.8482412, 0.98297423, 0.41568628)
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
+
+[node name="obelisk" type="StaticBody2D"]
+script = ExtResource("1_doacj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.15, 1.15)
+shape = SubResource("RectangleShape2D_doacj")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(29, 0)
+
+[node name="Obelisk0" type="Sprite2D" parent="."]
+texture = ExtResource("1_nxbmi")
+
+[node name="TowerRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerRange"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CircleShape2D_3rhmm")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 240.0
+offset_bottom = 240.0
+scale = Vector2(0.75, 0.75)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v68eo")
+
+[connection signal="body_entered" from="TowerRange" to="." method="_on_tower_range_body_entered"]
+[connection signal="body_exited" from="TowerRange" to="." method="_on_tower_range_body_exited"]

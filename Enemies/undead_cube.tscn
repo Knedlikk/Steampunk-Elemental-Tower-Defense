@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui0y8"]
 
-[node name="UndeadCube" type="CharacterBody2D"]
+[node name="UndeadCube" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("2_mv0tn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

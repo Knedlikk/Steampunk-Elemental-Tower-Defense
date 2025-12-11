@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bah0d8x12w840"]
+
+[ext_resource type="PackedScene" uid="uid://bromyh72uhd2a" path="res://Enemies/cybertrong.tscn" id="1_uiubh"]
+
+[sub_resource type="Curve2D" id="Curve2D_m67jj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 33, 224, 0, 0, 0, 0, 95, 224, 0, 0, 0, 0, 158, 224, 0, 0, 0, 0, 223, 223, 0, 0, 0, 0, 227, 288, 0, 0, 0, 0, 226, 352, 0, 0, 0, 0, 226, 416, 0, 0, 0, 0, 288, 413, 0, 0, 0, 0, 351, 417, 0, 0, 0, 0, 417, 417, 0, 0, 0, 0, 481, 416, 0, 0, 0, 0, 548, 417, 0, 0, 0, 0, 548, 356, 0, 0, 0, 0, 548, 285, 0, 0, 0, 0, 545, 224, 0, 0, 0, 0, 609, 223, 0, 0, 0, 0, 669, 224, 0, 0, 0, 0, 742, 221)
+}
+point_count = 18
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_m67jj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(33, 224)
+loop = false
+
+[node name="Cybertrong" parent="PathFollow2D" instance=ExtResource("1_uiubh")]
