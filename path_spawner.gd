@@ -50,6 +50,21 @@ func start_wave_3():
 		spawn_enemy(path_cyber) 
 		await get_tree().create_timer(1.0).timeout
 		
+		
+func start_wave_4():
+	print("Vlna 4!")
+	
+	for i in range(6):
+		spawn_enemy(path_scorp)
+		await get_tree().create_timer(1.0).timeout
+	
+	# Čekej 3 sekundy, než pošleš další skupinu (škorpiony)
+	await get_tree().create_timer(3.0).timeout
+	
+	# 2. ČÁST: Pošli 3 Scorpions
+	for i in range(5):
+		spawn_enemy(path_cyber) 
+		await get_tree().create_timer(1.0).timeout
 
 # Pomocná funkce jen pro vytvoření a přidání do scény
 func spawn_enemy(path_scene_to_spawn):
